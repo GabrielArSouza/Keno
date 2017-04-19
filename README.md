@@ -1,9 +1,9 @@
 # Keno
 
-Autores:
-Gabriel Araújo de Souza - gabriel_feg@hotmail.com
-Mayra
+Autores: <br/>
+Gabriel Araújo de Souza - gabriel_feg@hotmail.com <br/>
+Mayra <br/> <br/>
 
-Projeto realizado para a disciplina de Liguagem de Programação I
-Instituto Metrópole Digital - IMD
-Bacharelado em Tecnologia da Informação
+Projeto realizado para a disciplina de Liguagem de Programação I <br/>
+Instituto Metrópole Digital - IMD <br/>
+Bacharelado em Tecnologia da Informação <br/>
