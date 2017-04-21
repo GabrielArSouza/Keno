@@ -1,12 +1,16 @@
-#ifndef _KENOBET_H_
-#define _KENOBET_H_
+#ifndef _KENOMANAGER_H_
+#define _KENOMANAGER_H_
 
-    #include <iostream>
-    #include "game.h"
+#include <iostream>
+#include "kenobet.h"
 
 namespace Keno{
 
+    class KenoBet; //<! Forward declaration
+
     class KenoManager{
+
+        KenoBet * bet;
 
         //<! Membros
         private:
@@ -18,10 +22,10 @@ namespace Keno{
         //<! Métodos
         public: 
             /*! Construtor. */
-            KenoManager() :m_cash(0) { /*empty*/ }
+            KenoManager() :m_wage(0), m_rounds(10) { /*empty*/ }
 
             /*! Inicializa o jogo.*/
-            void initialize (char[] argv);
+            void initialize (char argv[]);
 
             /*! Recupera o valor de cada aposra.*/
             cash_type get_wage () const;
@@ -30,7 +34,7 @@ namespace Keno{
             void set_wage (cash_type value);
 
             /*! Recupera o número de rodadas.*/
-            int get_rounds (cash_type value);
+            int get_rounds () const;
 
             /*! Configura o número de rodadas.*/
             void set_rounds ( int value);

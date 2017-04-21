@@ -14,13 +14,19 @@ using number_type = unsigned short int ; // <! data type for a keno hit .
 using cash_type = float ; // <! Defines the wage type in this application .
 using set_of_bets = std::vector < number_type >;
 
-namespace Keno{
+namespace Game{
 
-    int MIN_NUMBER_SPOTS = 1;
-    int MAX_NUMBER_SPOTS = 15;
-    
+    static int MIN_NUMBER_SPOTS = 1;  //<! Menor número de apostas
+    static int MAX_NUMBER_SPOTS = 15; //<! Maior número de apostas
+    static int MIN_SPOT         = 1;  //<! Menor número apostado
+    static int MAX_SPOT         = 80; //<! Maior número apostado
 
-    std::vector <cash_type> payouts[15] = 
+    struct Result{
+        bool success;
+        std::string message;
+    };
+
+    static std::vector <cash_type> payouts[15] = 
     {
         {0, 3},                                                           //<! Tabela para 1 número
         {0, 1, 9},                                                        //<! Tabela para 2 números
@@ -39,13 +45,7 @@ namespace Keno{
         {0, 0, 0, 0.5, 0.5, 1, 2, 5, 15, 50, 150, 300, 600, 1200, 10000}  //<! Tabela para 15 números
     };
 
-    bool validate ( std::string filename){
-        bool ok(true);
-        std::string line;
-        std::ifstream file;
-        file.open(filename);
-        getline( file, line);
-    }
+    bool validate ( std::string filename);
 }
 
 #endif
