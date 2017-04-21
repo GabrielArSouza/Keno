@@ -1,4 +1,4 @@
-#include "kcommon.h"
+#include "game.h"
 
 int main () {
 
