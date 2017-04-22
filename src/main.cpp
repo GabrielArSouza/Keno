@@ -21,12 +21,11 @@ int main ( int argc, char* argv[]) {
 		return EXIT_FAILURE;
 	}
 
-	game.print_welcome();
+	game.welcome();
 	int turns = game.get_rounds();
 
-	
 	while( turns > 0){
-
+		game.render();
 		game.set_rounds(--turns);
 	}
 

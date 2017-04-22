@@ -14,7 +14,7 @@ Game::Result Keno::KenoManager::initialize ( std::string filename){
 	Game::Result response;
 	
 	//<! valida aposta
-	if (bet->set_wage(wage)){
+	if (bet.set_wage(wage)){
 		response.success = true;
 	}
 	else{
@@ -54,7 +54,7 @@ Game::Result Keno::KenoManager::initialize ( std::string filename){
 			number_type bets;
 			stream >> bets;
 			if (!stream) break;
-			auto t = bet->add_number(bets);
+			auto t = bet.add_number(bets);
 			if ( t ) cont++;
 
 		}
@@ -96,19 +96,43 @@ void Keno::KenoManager::set_rounds ( int value){
     m_rounds = value;
 }
 
-void Keno::KenoManager::print_welcome() const{
+void Keno::KenoManager::welcome() const{
 
-    std::cout << ">>> Aposta lida com sucesso!\n";
-    std::cout << std::right << std::setw(4) << std::setfill(' ') << "Você vai apostar um total de " 
-            << bet->get_wage() <<" reais.\n"
-            << "Serão " << m_rounds << " rodadas, cada uma valendo " << m_wage << ".\n\n"
-            << "Sua aposta possui " << bet->size() << " números. São eles [";
-    set_of_bets bets = bet->get_spots();
-        std::cout << bets[0] << " "; 
+    int turns = bet.size();
+
+    std::cout << ">>> Aposta lida com sucesso!";
+    std::cout << std::left << std::setw(5)<<"\n" << "Você vai apostar um total de " 
+            << bet.get_wage() <<" reais." << std::setw(5)<<"\n"
+
+            << "Serão " << m_rounds << " rodadas, cada uma valendo " << m_wage << ".\n" << std::setw(5) << "\n"
+            << "Sua aposta possui " <<  turns << " números. São eles [";
+    for( auto i(0); i < turns; ++i)
+        std::cout << bet.get_spots()[i] << " ";
+
     std::cout << "].\n";
+ 
+    std::cout << " " << std::setw(3) << " " << std::setw(11) << std::setfill( '-' ) << ""
+              << "+" << std::setw(10) << "" << "\n";
+    std::cout << " " << std::setw(3) << std::setfill(' ')<< " "<< "|" << std::setw(9) << " Acertos"
+              << "|" << std::setw(10) << " Pagamento" << "" << "|\n";
+    std::cout << " " << std::setw(3) << " " << std::setw(11) << std::setfill( '-' ) << ""
+              << "+" << std::setw(10) << "" << "\n";
+
+               double d1(1.0);
+    for( auto i(0ul) ; i < Game::payouts[turns-1].size() ; ++i )
+    {
+        std::cout << "" << std::setw(5) << std::setfill(' ') << std::right;
+        std::cout << "|"
+                  << std::setw(9) 
+                  << i
+                  << "|"
+                  << std::setw(10)
+                  << Game::payouts[turns-1][i]
+                  << "|\n";
+    }
 
 }
 
-void Keno::KenoManager::print_round(){
+void Keno::KenoManager::render(){
     std::cout << "teste";
 }

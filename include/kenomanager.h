@@ -13,32 +13,37 @@ namespace Keno{
 
     class KenoManager{
 
-        KenoBet * bet;
+        KenoBet bet;
 
         //<! Membros
         private:
             cash_type m_wage;    //<!Valor de cada aposta
-            set_of_bets m_spots; //<! Vetor com os números da aposta
+            set_of_bets m_numbers; //<! Vetor com os números da aposta
             int m_rounds;
 
 
         //<! Métodos
         public: 
             /*! Construtor. */
-            KenoManager() :m_wage(0), m_spots(20), m_rounds(10){ 
+            KenoManager() :m_wage(0), m_numbers(20), m_rounds(10){ 
                 
+                //<! Cria vetor temporários com números de 1 a 80
                 number_type *temp = new number_type[80];
+                for(auto i(0); i < 80; i++)
+                    *(temp+i) = i+1;
 
+                //<! Seed e shuffles dos elementos do vetor temporário
                 std::random_device rd;
                 std::mt19937 g(rd());
-            
                 std::shuffle(temp, temp+80, g);
 
-                std::copy(temp, temp+20, m_spots.begin());
+                // <! Copia os vinte primeiros elementos do vetor temporário
+                std::copy(temp, temp+20, m_numbers.begin());
 
-                delete [] temp;
+                delete [] temp; //<! Desaloca vetor temporário
 
-                std::sort(m_spots.begin(), m_spots.end());
+                //<! Ordena o vetor 
+                std::sort(m_numbers.begin(), m_numbers.end());
 
              }
 
@@ -57,9 +62,11 @@ namespace Keno{
             /*! Configura o número de rodadas.*/
             void set_rounds ( int value);
             
-            void print_welcome( ) const;
+            /*! Imprime na tela as informações do jogo. */
+            void welcome( ) const;
 
-            void print_round();
+            /*! Imprime na tela os resultados da jogada. */
+            void render();
     };
 }
 #endif
