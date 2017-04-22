@@ -5,7 +5,7 @@
 
 
 ## DIRS
-INCDIR = includes
+INCDIR = include
 SRCDIR = src
 OBJDIR = build
 

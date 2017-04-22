@@ -2,11 +2,12 @@
 #define _KENOMANAGER_H_
 
 #include <iostream>
+#include <string>
+#include <fstream>
+#include <sstream>
 #include "kenobet.h"
 
 namespace Keno{
-
-    class KenoBet; //<! Forward declaration
 
     class KenoManager{
 
@@ -25,9 +26,9 @@ namespace Keno{
             KenoManager() :m_wage(0), m_rounds(10) { /*empty*/ }
 
             /*! Inicializa o jogo.*/
-            void initialize (char argv[]);
+            void initialize (std::string filename);
 
-            /*! Recupera o valor de cada aposra.*/
+            /*! Recupera o valor de cada aposta.*/
             cash_type get_wage () const;
 
             /*! Configura o valor de cada aposta.*/

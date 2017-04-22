@@ -16,10 +16,14 @@ using set_of_bets = std::vector < number_type >;
 
 namespace Game{
 
-    static int MIN_NUMBER_SPOTS = 1;  //<! Menor número de apostas
-    static int MAX_NUMBER_SPOTS = 15; //<! Maior número de apostas
-    static int MIN_SPOT         = 1;  //<! Menor número apostado
-    static int MAX_SPOT         = 80; //<! Maior número apostado
+    static number_type MIN_NUMBER_SPOTS = 1;  		//<! Menor número de apostas
+    static number_type MAX_NUMBER_SPOTS = 15; 		//<! Maior número de apostas
+    static number_type MIN_SPOT         = 1;  		//<! Menor número apostado
+    static number_type MAX_SPOT         = 80;   	//<! Maior número apostado
+    static int MIN_ROUNDS               = 1;		//<! Menor número de rodadas
+    static int MAX_ROUNDS               = 10;       //<! Maior número de rodadas
+    static cash_type MIN_WAGE           = 1.0;		//<! Menor valor de aposta
+    static cash_type MAX_WAGE   		= 10000.0;  //<! Maior valor de aposta
 
     struct Result{
         bool success;

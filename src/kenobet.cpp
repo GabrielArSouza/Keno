@@ -1,9 +1,16 @@
 #include "../include/kenobet.h"
+#include "../include/game.h"
 
  /*! Adiciona os números válidos à aposta.*/
 bool KenoBet::add_number (number_type value){
 
-    return true;
+	if ( value >= Game::MIN_SPOT && value <= Game::MAX_SPOT )
+	{
+		m_spots.push_back (value);
+		return true;
+	}
+	else
+		return false;
 }
 
 /*! Recupera quantidade de números apostados. */
@@ -13,7 +20,11 @@ std::size_t KenoBet::size () const{
 
 /*! Configura o valor da aposta.*/
 bool KenoBet::set_wage (cash_type value){
-    m_cash = value;
+   
+    if ( value < Game::MIN_WAGE || value > Game::MAX_WAGE ) return false;
+    else m_cash = value;
+
+    return true;
 }
 
 /*! Recupera o valor da aposta.*/
