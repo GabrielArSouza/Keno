@@ -1,8 +1,7 @@
 #include "../include/kenomanager.h"
 #include "../include/kenobet.h"
-#include "../include/game.h"
 
-void Keno::KenoManager::initialize (/*char argv[]*/ std::string filename){
+Game::Result Keno::KenoManager::initialize ( std::string filename){
 	//<! abrir arquivo
 	std::string line;
 	std::ifstream file (filename);
@@ -29,6 +28,9 @@ void Keno::KenoManager::initialize (/*char argv[]*/ std::string filename){
 		getline( file, line );
 		int rounds;
 		std::stringstream(line) >> rounds;
+
+        this->set_rounds(rounds);
+        this->set_wage( wage / rounds );
 
 		//<! Valida rodadas
 		if ( rounds < Game::MIN_ROUNDS || rounds > Game::MAX_ROUNDS )
@@ -60,14 +62,18 @@ void Keno::KenoManager::initialize (/*char argv[]*/ std::string filename){
 		//<! Valida quantidade de números
 		if ( cont >= Game::MIN_NUMBER_SPOTS && cont <= Game::MAX_NUMBER_SPOTS )
 		{
+            
 			response.success = true;
 		}else
 		{
 			response.success = false;
 			response.message = " O número de números apostados é inválido, por favor, aposte ente 1 - 15 números ";
+        }
+
+        
 	}
 
-
+    return response;
 }
 
 /*! Recupera o valor de cada aposra.*/
@@ -88,4 +94,21 @@ int Keno::KenoManager::get_rounds () const{
 /*! Configura o número de rodadas.*/
 void Keno::KenoManager::set_rounds ( int value){
     m_rounds = value;
+}
+
+void Keno::KenoManager::print_welcome() const{
+
+    std::cout << ">>> Aposta lida com sucesso!\n";
+    std::cout << std::right << std::setw(4) << std::setfill(' ') << "Você vai apostar um total de " 
+            << bet->get_wage() <<" reais.\n"
+            << "Serão " << m_rounds << " rodadas, cada uma valendo " << m_wage << ".\n\n"
+            << "Sua aposta possui " << bet->size() << " números. São eles [";
+    set_of_bets bets = bet->get_spots();
+        std::cout << bets[0] << " "; 
+    std::cout << "].\n";
+
+}
+
+void Keno::KenoManager::print_round(){
+    std::cout << "teste";
 }

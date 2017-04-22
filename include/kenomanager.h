@@ -5,6 +5,8 @@
 #include <string>
 #include <fstream>
 #include <sstream>
+#include <random>
+#include <algorithm>
 #include "kenobet.h"
 
 namespace Keno{
@@ -23,10 +25,25 @@ namespace Keno{
         //<! Métodos
         public: 
             /*! Construtor. */
-            KenoManager() :m_wage(0), m_rounds(10) { /*empty*/ }
+            KenoManager() :m_wage(0), m_spots(20), m_rounds(10){ 
+                
+                number_type *temp = new number_type[80];
+
+                std::random_device rd;
+                std::mt19937 g(rd());
+            
+                std::shuffle(temp, temp+80, g);
+
+                std::copy(temp, temp+20, m_spots.begin());
+
+                delete [] temp;
+
+                std::sort(m_spots.begin(), m_spots.end());
+
+             }
 
             /*! Inicializa o jogo.*/
-            void initialize (std::string filename);
+            Game::Result initialize (std::string filename);
 
             /*! Recupera o valor de cada aposta.*/
             cash_type get_wage () const;
@@ -40,7 +57,9 @@ namespace Keno{
             /*! Configura o número de rodadas.*/
             void set_rounds ( int value);
             
+            void print_welcome( ) const;
 
+            void print_round();
     };
 }
 #endif
