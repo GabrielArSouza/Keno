@@ -100,36 +100,47 @@ void Keno::KenoManager::welcome() const{
 
     int turns = bet.size();
 
+    auto table_len(23);
+    int double_table_len = table_len/2;
+
     std::cout << ">>> Aposta lida com sucesso!";
     std::cout << std::left << std::setw(5)<<"\n" << "Você vai apostar um total de " 
             << bet.get_wage() <<" reais." << std::setw(5)<<"\n"
 
             << "Serão " << m_rounds << " rodadas, cada uma valendo " << m_wage << ".\n" << std::setw(5) << "\n"
-            << "Sua aposta possui " <<  turns << " números. São eles [";
+            << "Sua aposta possui " <<  turns << " números: [";
     for( auto i(0); i < turns; ++i)
         std::cout << bet.get_spots()[i] << " ";
-
     std::cout << "].\n";
- 
-    std::cout << " " << std::setw(3) << " " << std::setw(11) << std::setfill( '-' ) << ""
-              << "+" << std::setw(10) << "" << "\n";
-    std::cout << " " << std::setw(3) << std::setfill(' ')<< " "<< "|" << std::setw(9) << " Acertos"
-              << "|" << std::setw(10) << " Pagamento" << "" << "|\n";
-    std::cout << " " << std::setw(3) << " " << std::setw(11) << std::setfill( '-' ) << ""
-              << "+" << std::setw(10) << "" << "\n";
 
-               double d1(1.0);
+    std::cout << ""  << std::setw(4) << "" << "Aqui está a tabela com os valores dos acertos :\n";
+ 
+    std::cout << " " << std::setw(3) << " " << std::setw(double_table_len -1) << std::setfill( '-' ) << ""
+              << "+" << std::setw(double_table_len) << "" << "\n";
+    std::cout << " " << std::setw(3) << std::setfill(' ')<< " "<< "|" << std::setw(9) << " Acertos"
+              << "|" << std::setw(double_table_len -1) << " Pagamento" << "" << "|\n";
+    std::cout << " " << std::setw(3) << " " << std::setw(double_table_len -1) << std::setfill( '-' ) << ""
+              << "+" << std::setw(double_table_len) << "" << "\n";
+
     for( auto i(0ul) ; i < Game::payouts[turns-1].size() ; ++i )
     {
         std::cout << "" << std::setw(5) << std::setfill(' ') << std::right;
         std::cout << "|"
-                  << std::setw(9) 
+                  << std::setw(double_table_len -2) 
                   << i
                   << "|"
-                  << std::setw(10)
+                  << std::setw(double_table_len -1)
                   << Game::payouts[turns-1][i]
                   << "|\n";
     }
+
+     std::cout << "" << std::setw(4) << "" << std::setw(double_table_len -1) << std::setfill( '-' ) << ""
+              << "+" << std::setw(double_table_len) << "" << "\n";
+
+     std::cout << std::setfill( ' ' ) << "" << std::setw(5) << "" 
+              << "Bom jogo!\n";
+    
+    std::cout << "" << std::setw(4) << std::setfill(' ')<< "" << std::setw(table_len) << std::setfill('-') << "\n";
 
 }
 
