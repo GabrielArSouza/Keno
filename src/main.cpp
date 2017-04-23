@@ -23,10 +23,12 @@ int main ( int argc, char* argv[]) {
 
 	game.welcome();
 	int turns = game.get_rounds();
+	int round_ = 1;
 
 	while( turns > 0){
+		game.set_Current_round(round_++);
 		game.render();
-		game.set_rounds(--turns);
+		--turns;
 	}
 
 

@@ -9,6 +9,7 @@
 #include <string>
 #include <sstream>
 #include <iomanip>
+#include <random>
 
 using number_type = unsigned short int ; // <! data type for a keno hit .
 using cash_type = float ; // <! Defines the wage type in this application .

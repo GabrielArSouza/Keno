@@ -38,7 +38,8 @@ set_of_bets KenoBet::get_hits( const set_of_bets & hits_ ) const{
     return m_spots; //stub
 }
 
-/* Recupera o vetor com os números que o jogador apostou. */
+/*! Recupera o vetor com os números que o jogador apostou. */
 set_of_bets KenoBet::get_spots( ) const{
     return m_spots;
 }
+
