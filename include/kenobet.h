@@ -2,6 +2,7 @@
 #define _KENOBET_H_
 
     #include <iostream>
+    #include <algorithm>
     #include "game.h"
 
     class KenoBet{
@@ -15,7 +16,9 @@
         //<! Métodos
         public: 
             /*! Construtor. */
-            KenoBet() :m_cash(0) { /*empty*/ }
+            KenoBet() :m_cash(0) { 
+              
+             }
 
             /*! Adiciona os números válidos à aposta.*/
             bool add_number (number_type value);

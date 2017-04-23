@@ -6,7 +6,8 @@ bool KenoBet::add_number (number_type value){
 
 	if ( value >= Game::MIN_SPOT && value <= Game::MAX_SPOT )
 	{
-		m_spots.push_back (value);
+		m_spots.push_back(value);
+        std::sort(m_spots.begin(), m_spots.end());
 		return true;
 	}
 	else
@@ -15,7 +16,7 @@ bool KenoBet::add_number (number_type value){
 
 /*! Recupera quantidade de números apostados. */
 std::size_t KenoBet::size () const{
-    return sizeof(m_spots);
+    return m_spots.size();
 }
 
 /*! Configura o valor da aposta.*/

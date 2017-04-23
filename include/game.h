@@ -8,22 +8,23 @@
 #include <fstream>
 #include <string>
 #include <sstream>
-
+#include <iomanip>
 
 using number_type = unsigned short int ; // <! data type for a keno hit .
 using cash_type = float ; // <! Defines the wage type in this application .
 using set_of_bets = std::vector < number_type >;
 
+
 namespace Game{
 
-    static number_type MIN_NUMBER_SPOTS = 1;  		//<! Menor número de apostas
-    static number_type MAX_NUMBER_SPOTS = 15; 		//<! Maior número de apostas
-    static number_type MIN_SPOT         = 1;  		//<! Menor número apostado
-    static number_type MAX_SPOT         = 80;   	//<! Maior número apostado
-    static int MIN_ROUNDS               = 1;		//<! Menor número de rodadas
-    static int MAX_ROUNDS               = 10;       //<! Maior número de rodadas
-    static cash_type MIN_WAGE           = 1.0;		//<! Menor valor de aposta
-    static cash_type MAX_WAGE   		= 10000.0;  //<! Maior valor de aposta
+     static const int MIN_NUMBER_SPOTS = 1;      //<! Menor número de apostas
+     static const int MAX_NUMBER_SPOTS = 15;     //<! Maior número de apostas
+     static const int MIN_SPOT         = 1;      //<! Menor número apostado
+     static const int MAX_SPOT         = 80;     //<! Maior número apostado
+     static const int MIN_ROUNDS       = 1;	     //<! Menor número de rodadas
+     static const int MAX_ROUNDS       = 10;     //<! Maior número de rodadas
+     static const cash_type MIN_WAGE   = 1.0;	 //<! Menor valor de aposta
+     static const cash_type MAX_WAGE = 10000.0;
 
     struct Result{
         bool success;
@@ -50,6 +51,7 @@ namespace Game{
     };
 
     bool validate ( std::string filename);
+
 }
 
 #endif
