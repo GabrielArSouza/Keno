@@ -1,5 +1,5 @@
-#include "../include/kenobet.h"
-#include "../include/game.h"
+#include "kenobet.h"
+#include "game.h"
 
  /*! Adiciona os números válidos à aposta.*/
 bool KenoBet::add_number (number_type value){

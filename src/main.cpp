@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../include/kenomanager.h"
+#include "kenomanager.h"
 
 int main ( int argc, char* argv[]) {
 

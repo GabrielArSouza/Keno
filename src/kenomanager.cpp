@@ -1,5 +1,5 @@
-#include "../include/kenomanager.h"
-#include "../include/kenobet.h"
+#include "kenomanager.h"
+#include "kenobet.h"
 
 Game::Result Keno::KenoManager::initialize ( std::string filename){
 	//<! abrir arquivo
