@@ -22,13 +22,13 @@ int main ( int argc, char* argv[]) {
 	}
 
 	game.welcome();
-	int turns = game.get_rounds();
-	int round_ = 1;
-
-	while( turns > 0){
-		game.set_Current_round(round_++);
+	
+	while( game.get_rounds() > game.get_Current_round()){
+		
+		game.process();
+		game.update();
 		game.render();
-		--turns;
+
 	}
 
 

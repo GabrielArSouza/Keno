@@ -104,8 +104,8 @@ int Keno::KenoManager::get_Current_round () const {
 }
 
 /*! Salva a rodada atual. */
-void Keno::KenoManager::set_Current_round ( int value ) {
-	m_current_round = value;
+void Keno::KenoManager::set_Current_round ( ) {
+	m_current_round++;
 }
 
 /*! Recupera o dinheiro do cliente.*/
@@ -117,6 +117,29 @@ cash_type Keno::KenoManager::get_won () const{
 void Keno::KenoManager::set_won ( cash_type value ){
     m_won += value;
 }
+
+/*! Recupera o pagamento da rodada */
+cash_type Keno::KenoManager::get_payout () const {
+	return m_payout;
+}
+
+/*! Configura o pagamento da rodada */
+void Keno::KenoManager::set_payout ( int value ){
+
+	auto pg = Game::payouts[bet.size()][value];
+	m_payout = pg;
+}
+
+/*! Recupera o dinheiro pago na rodada*/
+cash_type Keno::KenoManager::get_pmoney () const {
+	return m_pmoney;
+}
+
+/*! Configura o dinheiro ganho na rodada*/
+void Keno::KenoManager::set_pmoney (  ){
+	m_pmoney = m_payout * m_wage;
+}
+
 
 /*! Sorteia 20 números */
 set_of_bets Keno::KenoManager::draw_number () {
@@ -138,22 +161,6 @@ set_of_bets Keno::KenoManager::draw_number () {
     //<! Ordena o vetor 
     std::sort(m_numbers.begin(), m_numbers.end());
     return m_numbers;
-}
-
-/*! Ver números acertados */
-set_of_bets Keno::KenoManager::hits( set_of_bets draw, set_of_bets bet ){
-	auto tm = bet.size();
-	set_of_bets hits;
-
-	for (auto i(0ul); i < tm; i++ )
-	{
-		auto target = bet[i];
-		auto resp = binary_search( draw.begin(), draw.end(), target);
-		if ( resp ) 
-			hits.push_back(target);
-	}
-
-	return hits;	
 }
 
 /*! Imprime menssagem de boas vindas */
@@ -204,22 +211,40 @@ set_of_bets Keno::KenoManager::hits( set_of_bets draw, set_of_bets bet ){
   
 }
 
-void Keno::KenoManager::render(){
+void Keno::KenoManager::process() const{
 
 	std::cout << ">>> Aperte ENTER para continuar. ";
 	std::string enter;
 	getline( std::cin, enter );
 
+}
+
+void Keno::KenoManager::update(){
+
+	this->set_Current_round();
+
 	cash_type att = -m_wage; 
 	this->set_won(att);
 
-    std::cout << std::setw(50) << std::setfill( '-' ) << "" << std::endl;
+	draw_number();
+
+	auto hits = bet.get_hits(m_numbers);
+	auto n_hits = hits.size();
+	
+	this->set_payout(n_hits);	
+	this->set_pmoney();
+    this->set_won(get_pmoney());
+
+}
+
+void Keno::KenoManager::render(){
+
+	std::cout << std::setw(50) << std::setfill( '-' ) << "" << std::endl;
     std::cout << " Esta é a rodada #" << m_current_round 
     		  << " de #" << m_rounds << ", e sua aposta é de " 
     		  << "R$" <<  m_wage << ". Boa Sorte!\n";
 
-    draw_number(); 
-   	std::cout << " Os números sorteados são: [ ";
+    std::cout << " Os números sorteados são: [ ";
     for ( auto i(0); i < 20; i++)
     	std::cout << m_numbers[i] << " ";
     std::cout << "]\n";
@@ -234,7 +259,7 @@ void Keno::KenoManager::render(){
     std::cout << "\n";
 
     std::cout << " Você acertou o(s) seguinte(s) número(s) [ ";
-    auto hits_ = hits( m_numbers, bet.get_spots() );
+    auto hits_ = bet.get_hits( m_numbers );
     auto th = (int) hits_.size();
 
     for (auto i(0); i < th; ++i)
@@ -242,12 +267,8 @@ void Keno::KenoManager::render(){
     std::cout << "], um total de " << th
     		  << " acerto(s) de " << t << std::endl;
 
-    auto pg = Game::payouts[t-1][th];
-    auto cash_ = m_wage*pg;
+    std::cout << " A taxa de pagamento é " << this->get_payout() 
+    		  << ", assim você saiu com: R$" << this->get_pmoney() << "\n";
 
-    std::cout << " A taxa de pagamento é " << pg 
-    		  << ", assim você saiu com: R$" << cash_ << "\n";
-
-   	this->set_won(cash_);
    	std::cout << " Seu saldo líquido até agora é: " << get_won() << " reais \n\n";
 }

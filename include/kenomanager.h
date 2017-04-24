@@ -22,12 +22,14 @@ namespace Keno{
             set_of_bets m_numbers; //<! Vetor com os números da aposta
             int m_rounds; //<! Quantidade de rodadas
             int m_current_round; //<! Rodada Atual
+            cash_type m_payout; //<! Pagamento da rodada
+            cash_type m_pmoney; //<! Dinheiro recebido por rodada
 
 
         //<! Métodos
         public: 
             /*! Construtor. */
-            KenoManager() :m_wage(0), m_won(0), m_numbers(20), m_rounds(10)  {}
+            KenoManager() :m_wage(0), m_won(0), m_numbers(20), m_rounds(10), m_current_round(0)  {}
 
             /*! Inicializa o jogo.*/
             Game::Result initialize (std::string filename);
@@ -47,6 +49,11 @@ namespace Keno{
             /*! Imprime na tela as informações do jogo. */
             void welcome() const;
 
+            /*! */
+            void process() const;
+
+            void update();
+
             /*! Imprime na tela os resultados da jogada. */
             void render();
 
@@ -54,19 +61,28 @@ namespace Keno{
             int get_Current_round () const;
 
             /*! Salva a rodada atual. */
-            void set_Current_round ( int value );
+            void set_Current_round ( );
 
             /*! Sorteia 20 números */
             set_of_bets draw_number ();
-
-            /*! Ver números acertados */
-            set_of_bets hits( set_of_bets draw, set_of_bets bet );
 
             /*! Recupera o dinheiro do cliente.*/
             cash_type get_won () const;
 
             /*! Atualiza o dinheiro do cliente.*/
             void set_won ( cash_type value );
+
+            /*! Recupera o pagamento da rodada */
+            cash_type get_payout () const;
+
+            /*! Configura o pagamento da rodada */
+            void set_payout ( int value );
+
+            /*! Recupera o dinheiro pago na rodada*/
+            cash_type get_pmoney () const;
+
+            /*! Configura o dinheiro ganho na rodada*/
+            void set_pmoney (  );
     };
 }
 #endif

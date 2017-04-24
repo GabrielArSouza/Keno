@@ -35,7 +35,19 @@ cash_type KenoBet::get_wage () const{
 
 /*! Verifica a interseção entre os números sorteados e os da aposta. */
 set_of_bets KenoBet::get_hits( const set_of_bets & hits_ ) const{
-    return m_spots; //stub
+    
+    auto tm = size();
+    set_of_bets hits;
+
+	for (auto i(0ul); i < tm; i++ )
+	{
+		auto target = m_spots[i];
+		auto resp = binary_search( hits_.begin(), hits_.end(), target);
+		if ( resp ) 
+			hits.push_back(target);
+	}
+
+	return hits;	
 }
 
 /*! Recupera o vetor com os números que o jogador apostou. */
