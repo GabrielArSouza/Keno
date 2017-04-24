@@ -1,12 +1,7 @@
 #ifndef _KENOMANAGER_H_
 #define _KENOMANAGER_H_
 
-#include <iostream>
-#include <string>
-#include <fstream>
-#include <sstream>
-#include <random>
-#include <algorithm>
+/*! Includes */
 #include "kenobet.h"
 
 namespace Keno{
@@ -17,13 +12,13 @@ namespace Keno{
 
         //<! Membros
         private:
-            cash_type m_wage;    //<!Valor de cada aposta
-            cash_type m_won;      //<! Dinheiro com o cliente
+            cash_type m_wage;      //<! Valor de cada aposta
+            cash_type m_won;       //<! Dinheiro com o cliente
             set_of_bets m_numbers; //<! Vetor com os números da aposta
-            int m_rounds; //<! Quantidade de rodadas
-            int m_current_round; //<! Rodada Atual
-            cash_type m_payout; //<! Pagamento da rodada
-            cash_type m_pmoney; //<! Dinheiro recebido por rodada
+            int m_rounds;          //<! Quantidade de rodadas
+            int m_current_round;   //<! Rodada Atual
+            cash_type m_payout;    //<! Pagamento da rodada
+            cash_type m_pmoney;    //<! Dinheiro recebido por rodada
 
 
         //<! Métodos

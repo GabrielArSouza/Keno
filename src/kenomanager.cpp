@@ -72,7 +72,8 @@ Game::Result Keno::KenoManager::initialize ( std::string filename){
 
         
 	}
-
+	file.close();
+	
 	this->set_won(bet.get_wage());
 
     return response;

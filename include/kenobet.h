@@ -1,6 +1,7 @@
 #ifndef _KENOBET_H_
 #define _KENOBET_H_
 
+    /*! Includes */
     #include "game.h"
 
     class KenoBet{

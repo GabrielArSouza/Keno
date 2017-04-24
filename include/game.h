@@ -1,19 +1,19 @@
 #ifndef _GAME_H_
 #define _GAME_H_
 
-#include <iostream>
-#include <vector> 
-#include <algorithm>
-#include <iterator>
-#include <fstream>
-#include <string>
-#include <sstream>
-#include <iomanip>
-#include <random>
+#include <iostream>   //<! std::cout, std::cin
+#include <vector>     //<! std::vector, push_back()
+#include <algorithm>  //<! begin(), end(), std::shuffle, std::copy, std::sort, std::unique, binary_search
+#include <iterator>   //<! std::begin, std::end, std::distance
+#include <fstream>    //<! is_open(), close()
+#include <string>     //<! getline(), >>
+#include <sstream>    //<! std::stringstream
+#include <iomanip>    //<! std::setw, std::setfill
+#include <random>     //<! std::random_device, std::mt19937
 
-using number_type = unsigned short int ; // <! data type for a keno hit .
-using cash_type = float ; // <! Defines the wage type in this application .
-using set_of_bets = std::vector < number_type >;
+using number_type = unsigned short int ;         // <! Tipo de dados para os números do Keno.
+using cash_type = float ;                        // <! Define o tipo do dinheiro no Keno.
+using set_of_bets = std::vector < number_type >; // <! Define o tipo do vetor com números do Keno.
 
 
 namespace Game{
@@ -25,13 +25,20 @@ namespace Game{
      static const int MIN_ROUNDS       = 1;	     //<! Menor número de rodadas
      static const int MAX_ROUNDS       = 10;     //<! Maior número de rodadas
      static const cash_type MIN_WAGE   = 1.0;	 //<! Menor valor de aposta
-     static const cash_type MAX_WAGE = 10000.0;
+     static const cash_type MAX_WAGE = 10000.0;  //<! Maior valor de aposta
 
+    /**
+     * @brief      Erro ou Sucesso e armazena mensagem de erro,
+     *             caso um seja detectado.
+     */
     struct Result{
         bool success;
         std::string message;
     };
 
+    /**
+     * Tabela de pagamentos do Keno.
+     */
     static std::vector <cash_type> payouts[15] = 
     {
         {0, 3},                                                           //<! Tabela para 1 número
@@ -51,6 +58,12 @@ namespace Game{
         {0, 0, 0, 0.5, 0.5, 1, 2, 5, 15, 50, 150, 300, 600, 1200, 10000}  //<! Tabela para 15 números
     };
 
+    /**
+     * @brief      Valida a aposta informada pelo jogador
+     * @param[in]  filename  Nome do arquivo contendo a aposta
+     * @return     Sim, caso o arquivo contenha as três informações necessárias,
+     *             não, caso contrário
+     */
     bool validate ( std::string filename);
 
 }
