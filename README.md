@@ -15,7 +15,7 @@ A casa então sorteia 20 números aleatoriamente e o pagamento é feito de acord
 
 ## Possíveis erros
 
-```bash
+```console
 Arquivo inválido! Por favor, tente novamente
 ```
 <br>
