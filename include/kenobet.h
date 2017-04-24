@@ -1,3 +1,10 @@
+/**
+ * @file kenobet.h
+ * @authors Gabriel Araújo de Souza e Mayra Dantas de Azevedo
+ * @date 23 Abr 2017
+ * @brief Arquivo contendo as definições da classe KenoBet.
+ */
+
 #ifndef _KENOBET_H_
 #define _KENOBET_H_
 

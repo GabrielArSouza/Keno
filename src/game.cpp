@@ -1,4 +1,11 @@
- #include "../include/game.h"
+/**
+ * @file game.cpp
+ * @authors Gabriel Araújo de Souza e Mayra Dantas de Azevedo
+ * @date 23 Abr 2017
+ * @brief Arquivo com as impletações dos métodos do namespace Game.
+ */
+
+ #include "game.h"
  
  bool Game::validate ( std::string filename){
     std::string line = " ";

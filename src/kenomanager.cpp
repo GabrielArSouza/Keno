@@ -1,7 +1,16 @@
+/**
+ * @file kenomanager.cpp
+ * @authors Gabriel Araújo de Souza e Mayra Dantas de Azevedo
+ * @date 23 Abr 2017
+ * @brief Arquivo com as impletações dos métodos da classe KenoManager.
+ */
+
+/*!Includes*/
 #include "kenomanager.h"
 #include "kenobet.h"
 
 Game::Result Keno::KenoManager::initialize ( std::string filename){
+	
 	//<! abrir arquivo
 	std::string line;
 	std::ifstream file (filename);
@@ -73,7 +82,7 @@ Game::Result Keno::KenoManager::initialize ( std::string filename){
         
 	}
 	file.close();
-	
+
 	this->set_won(bet.get_wage());
 
     return response;
@@ -212,6 +221,10 @@ set_of_bets Keno::KenoManager::draw_number () {
   
 }
 
+/**
+ * @brief      Processa as rodadas, espera o jogador da a informação
+ *             de que deseja proceguir.
+ */
 void Keno::KenoManager::process() const{
 
 	std::cout << ">>> Aperte ENTER para continuar. ";
@@ -220,6 +233,12 @@ void Keno::KenoManager::process() const{
 
 }
 
+/**
+ * @brief      Atualiza todos os dados de cada rodada, sorteia os números,
+ *             atualiza o dinheiro do jogador, atualiza as rodadas jogadas,
+ *             os números sorteados e a quantidade de acerto e o dinheiro ganho
+ *             na rodada.
+ */
 void Keno::KenoManager::update(){
 
 	this->set_Current_round();
@@ -238,6 +257,7 @@ void Keno::KenoManager::update(){
 
 }
 
+//<! Imprime na tela os resultados da jogada.
 void Keno::KenoManager::render(){
 
 	std::cout << std::setw(50) << std::setfill( '-' ) << "" << std::endl;

@@ -1,9 +1,16 @@
+/**
+ * @file game.h
+ * @authors Gabriel Araújo de Souza e Mayra Dantas de Azevedo
+ * @date 23 Abr 2017
+ * @brief Arquivo contendo elementos comuns a KenoBet e KenoGame.
+ */
+
 #ifndef _GAME_H_
 #define _GAME_H_
 
 #include <iostream>   //<! std::cout, std::cin
-#include <vector>     //<! std::vector, push_back()
-#include <algorithm>  //<! begin(), end(), std::shuffle, std::copy, std::sort, std::unique, binary_search
+#include <vector>     //<! std::vector, push_back(), begin(), end()
+#include <algorithm>  //<! std::shuffle, std::copy, std::sort, std::unique, binary_search
 #include <iterator>   //<! std::begin, std::end, std::distance
 #include <fstream>    //<! is_open(), close()
 #include <string>     //<! getline(), >>

@@ -1,3 +1,10 @@
+/**
+ * @file kenomanager.h
+ * @authors Gabriel Araújo de Souza e Mayra Dantas de Azevedo
+ * @date 23 Abr 2017
+ * @brief Arquivo contendo as definições da classe KenoManager.
+ */
+
 #ifndef _KENOMANAGER_H_
 #define _KENOMANAGER_H_
 
@@ -23,63 +30,124 @@ namespace Keno{
 
         //<! Métodos
         public: 
-            /*! Construtor. */
+            /**
+             * @brief      Construtor
+             */
             KenoManager() :m_wage(0), m_won(0), m_numbers(20), m_rounds(10), m_current_round(0)  {}
 
-            /*! Inicializa o jogo.*/
+            /**
+             * @brief      Inicializa o jogo: ler o arquivo do jogador, salva o valor da aposta, a quantidade
+             *             de rodadas e os números apostados pelo jogador.  
+             * @param[in]  filename  Nome do arquivo enviado pelo jogador contendo a aposta.
+             * @return     O struct Result contendo se as operações forma realizadas com sucesso e caso tenha
+             *             ocorrido um erro, uma mensagem descrevendo o erro que ocorreu.
+             */
             Game::Result initialize (std::string filename);
 
             /*! Recupera o valor de cada aposta.*/
+            /**
+             * @brief      Recupera o valor de cada aposta.
+             * @return     Valor da aposta.
+             */
             cash_type get_wage () const;
 
-            /*! Configura o valor de cada aposta.*/
+            /**
+             * @brief      Configura o valor de cada aposta.
+             * @param[in]  value  valor da aposta
+             */
             void set_wage (cash_type value);
 
-            /*! Recupera o número de rodadas.*/
+            /**
+             * @brief      Recupera o número de rodadas.
+             * @return     Número de rodadas
+             */
             int get_rounds () const;
 
-            /*! Configura o número de rodadas.*/
+            /**
+             * @brief      Configura o número de rodadas.
+             * @param[in]  value  Quantidade de rodadas.
+             */
             void set_rounds ( int value);
             
-            /*! Imprime na tela as informações do jogo. */
+            /**
+             * @brief      Imprime na tela as informações do jogo.
+             */
             void welcome() const;
 
-            /*! */
+            /**
+             * @brief      Processa as rodadas, espera o jogador da a informação
+             *             de que deseja proceguir.
+             */
             void process() const;
 
+            /**
+             * @brief      Atualiza todos os dados de cada rodada, sorteia os números,
+             *             atualiza o dinheiro do jogador, atualiza as rodadas jogadas,
+             *             os números sorteados e a quantidade de acerto e o dinheiro ganho
+             *             na rodada.
+             */
             void update();
 
-            /*! Imprime na tela os resultados da jogada. */
+            /**
+             * @brief      Imprime na tela os resultados da jogada.
+             */
             void render();
 
-            /*! Recupera a rodada atual. */
+            /**
+             * @brief      Recupera a rodada atual.
+             * @return     rodada atual
+             */
             int get_Current_round () const;
 
-            /*! Salva a rodada atual. */
+            /**
+             * @brief      Salva a rodada attual
+             */
             void set_Current_round ( );
 
-            /*! Sorteia 20 números */
+            /**
+             * @brief      Sorteia 20 números
+             * @return     20 números sorteados aleatoriamente
+             */
             set_of_bets draw_number ();
 
-            /*! Recupera o dinheiro do cliente.*/
+            /**
+             * @brief      Recupera o dinheiro do jogador.
+             * @return     Dinheiro do jogador.
+             */
             cash_type get_won () const;
 
-            /*! Atualiza o dinheiro do cliente.*/
+            /**
+             * @brief      Atualiza o dinheiro do cliente.
+             * @param[in]  value  Dinheiro ganho na rodada.
+             */
             void set_won ( cash_type value );
 
-            /*! Recupera o pagamento da rodada */
+            /**
+             * @brief      Recupera o pagamento da rodada.
+             * @return     Pagamento da rodada.
+             */
             cash_type get_payout () const;
 
-            /*! Configura o pagamento da rodada */
+            /**
+             * @brief      Configura o pagamento da rodada
+             * @param[in]  value  Quantidade de acertos na rodada
+             */
             void set_payout ( int value );
 
-            /*! Recupera o dinheiro pago na rodada*/
+            /**
+             * @brief      Recupera o dinheiro pago na rodada.
+             * @return     dinheiro pago na rodada.
+             */
             cash_type get_pmoney () const;
 
-            /*! Configura o dinheiro ganho na rodada*/
+            /**
+             * @brief      Configura o dinheiro ganho na rodada.
+             */
             void set_pmoney (  );
 
-            /*! Apresenta o fim de jogo */
+            /**
+             * @brief      Apresenta o fim de jogo.
+             */
             void end_game();
 
     };

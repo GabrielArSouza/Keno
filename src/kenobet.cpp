@@ -1,8 +1,16 @@
+/**
+ * @file kenobet.cpp
+ * @authors Gabriel Araújo de Souza e Mayra Dantas de Azevedo
+ * @date 23 Abr 2017
+ * @brief Arquivo com as impletações dos métodos da classe KenoBet.
+ */
+
+
 /*! Includes */
 #include "kenobet.h"
 #include "game.h"
 
- /*! Adiciona os números válidos à aposta.*/
+/*! Adiciona os números válidos à aposta.*/
 bool KenoBet::add_number (number_type value){
 
 	if ( value >= Game::MIN_SPOT && value <= Game::MAX_SPOT )
