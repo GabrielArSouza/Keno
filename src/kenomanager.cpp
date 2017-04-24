@@ -28,7 +28,7 @@ Game::Result Keno::KenoManager::initialize ( std::string filename){
 	}
 	else{
 		response.success = false;
-		response.message = " A aposta não é um valor válido, por favor, aposte entre R$ 1,00 - 10.000,00 ";
+		response.message = " A aposta não é um valor válido! Por favor, aposte entre R$ 1,00 - 10.000,00. ";
 	}
 
 	if ( response.success )
@@ -45,7 +45,7 @@ Game::Result Keno::KenoManager::initialize ( std::string filename){
 		if ( rounds < Game::MIN_ROUNDS || rounds > Game::MAX_ROUNDS )
 		{
 			response.success = false;
-			response.message = " O número de rodadas não é válido, por favor, aposte entre 1 - 10 rodadas ";
+			response.message = " O número de rodadas não é válido! Por favor, aposte entre 1 - 10 rodadas. ";
 		}else {
 			response.success = true;
 		}
@@ -76,7 +76,7 @@ Game::Result Keno::KenoManager::initialize ( std::string filename){
 		}else
 		{
 			response.success = false;
-			response.message = " O número de números apostados é inválido, por favor, aposte ente 1 - 15 números ";
+			response.message = " O número de números apostados é inválido! Por favor, aposte ente 1 - 15 números. ";
         }
 
         
@@ -257,12 +257,14 @@ void Keno::KenoManager::update(){
 
 }
 
-//<! Imprime na tela os resultados da jogada.
+/**
+ * @brief      Imprime na tela os resultados da jogada.
+ */
 void Keno::KenoManager::render(){
 
 	std::cout << std::setw(50) << std::setfill( '-' ) << "" << std::endl;
     std::cout << " Esta é a rodada #" << m_current_round 
-    		  << " de #" << m_rounds << ", e sua aposta é de " 
+    		  << " de " << m_rounds << ", e sua aposta é de " 
     		  << "R$" <<  m_wage << ". Boa Sorte!\n";
 
     std::cout << " Os números sorteados são: [ ";
@@ -288,12 +290,14 @@ void Keno::KenoManager::render(){
     		  << " acerto(s) de " << t << std::endl;
 
     std::cout << " A taxa de pagamento é " << this->get_payout() 
-    		  << ", assim você saiu com: R$" << this->get_pmoney() << "\n";
+    		  << ", assim você ganhou nessa rodada: R$" << this->get_pmoney() << "\n";
 
    	std::cout << " Seu saldo líquido até agora é: " << this->get_won() << " reais \n\n";
 }
 
-/*! Apresenta o fim de jogo */
+/**
+ * @brief      Apresenta o fim de jogo.
+ */
 void Keno::KenoManager::end_game(){
 
 	std::cout << ">>> FIM DE JOGO \n";
