@@ -83,6 +83,10 @@ namespace Keno{
 
             /*! Configura o dinheiro ganho na rodada*/
             void set_pmoney (  );
+
+            /*! Apresenta o fim de jogo */
+            void end_game();
+
     };
 }
 #endif

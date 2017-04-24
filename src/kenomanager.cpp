@@ -255,9 +255,8 @@ void Keno::KenoManager::render(){
         std::cout << bet.get_spots()[i] << " ";
     std::cout << "].\n";
 
-    std::cout << "\n";
-    std::cout << "\n";
-
+    std::cout << "\n\n";
+   
     std::cout << " Você acertou o(s) seguinte(s) número(s) [ ";
     auto hits_ = bet.get_hits( m_numbers );
     auto th = (int) hits_.size();
@@ -270,5 +269,23 @@ void Keno::KenoManager::render(){
     std::cout << " A taxa de pagamento é " << this->get_payout() 
     		  << ", assim você saiu com: R$" << this->get_pmoney() << "\n";
 
-   	std::cout << " Seu saldo líquido até agora é: " << get_won() << " reais \n\n";
+   	std::cout << " Seu saldo líquido até agora é: " << this->get_won() << " reais \n\n";
+}
+
+/*! Apresenta o fim de jogo */
+void Keno::KenoManager::end_game(){
+
+	std::cout << ">>> FIM DE JOGO \n";
+	std::cout << std::setfill('-') << std::setw(50);
+	std::cout << "\n\n";
+
+	auto gain = this->get_won() - bet.get_wage();
+
+	std::cout << "===== SUMÁRIO =====\n\n";
+	std::cout << ">>> Você entrou no jogo com um total de R$" << bet.get_wage() << " reais\n";
+	if ( gain > 0 ) 
+		std::cout << ">>> Você ganhou R$" << gain << " reais. Até a próxima! ;-)\n";
+	else 
+		std::cout << ">>> Você perdeu R$" << gain * -1 << " reais. Até a próxima! ;-)\n";
+	std::cout << ">>> Você está saindo do Keno com R$" << this->get_won() << " reais.\n\n";
 }

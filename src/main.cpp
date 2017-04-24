@@ -31,6 +31,8 @@ int main ( int argc, char* argv[]) {
 
 	}
 
+	game.end_game();
+
 
 	return EXIT_SUCCESS;
 }
