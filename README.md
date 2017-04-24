@@ -15,14 +15,17 @@ A casa então sorteia 20 números aleatoriamente e o pagamento é feito de acord
 
 ## Possíveis erros
 
-```console
+```shell
 Arquivo inválido! Por favor, tente novamente
 ```
 <br>
 Arquivos inválidos não serão lidos pelo jogo. Um arquivo é considerado ilegível se possuir número de linhas diferente de 3.
 
 
-``` A aposta não é um valor válido, por favor, aposte entre R$ 1,00 - 10.000,00  ```<br>
+```shell
+A aposta não é um valor válido, por favor, aposte entre R$ 1,00 - 10.000,00  
+```
+<br>
 Os valores da aposta, ou seja, a primeira linha do arquivo lido, deve estar entre 1 e 10000 reais para ser considerado uma aposta válida.
 
 ## Autoria
