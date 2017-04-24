@@ -20,22 +20,48 @@
               
              }
 
-            /*! Adiciona os números válidos à aposta.*/
+           
+            /**
+             * @brief      Adiciona os números válidos à aposta.
+             * @param[in]  value  Número que se deseja adicionar.
+             * @return     Sim, se o número atender os critérios para ser adicionado,
+             *             não, caso contrário.
+             */
             bool add_number (number_type value);
 
-            /*! Recupera quantidade de números apostados. */
+            /**
+             * @brief      Recupera a quantidade de números apostados.
+             * @return     retorna quantos números válidos foram apostados.
+             */
             std::size_t size () const;
 
-            /*! Configura o valor da aposta.*/
+            
+            /**
+             * @brief      Configura o valor da aposta.
+             * @param[in]  value  Valor da aposta informada pelo usuário
+             * @return     Sim, se a aposta tiver um valor válido e for inserida,
+             *             não, caso contrário.
+             */
             bool set_wage (cash_type value);
 
-            /*! Recupera o valor da aposta.*/
+            /**
+             * @brief      Recupera o valor da aposta.
+             * @return     O valor da aposta.
+             */
             cash_type get_wage () const;
 
-            /*! Verifica a interseção entre os números sorteados e os da aposta. */
+            /**
+             * @brief      Verifica a interseção entre os números sorteados e os da aposta.
+             * @param[in]  hits_  Números sorteados.
+             * @return     Vetor com os números acertados.
+             */
             set_of_bets get_hits( const set_of_bets & hits_ ) const;
 
-            /* Recupera o vetor com os números que o jogador apostou. */
+            
+            /**
+             * @brief      Recupera o vetor com os números que o jogador apostou.
+             * @return     Vetor com os números apostados pelo jogador.
+             */
             set_of_bets get_spots( ) const;
 
     };
