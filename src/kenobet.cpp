@@ -8,6 +8,9 @@ bool KenoBet::add_number (number_type value){
 	{
 		m_spots.push_back(value);
         std::sort(m_spots.begin(), m_spots.end());
+        auto end = std::unique(m_spots.begin(), m_spots.end());
+        int sz = std::distance ( m_spots.begin(), end);
+        m_spots.resize(sz);
 		return true;
 	}
 	else
