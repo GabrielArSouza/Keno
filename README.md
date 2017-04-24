@@ -2,9 +2,16 @@
 
 ## Sobre o jogo
 
-<p>Keno é um jogo comumente encontrado em casinos e é semelhante a um bingo. O jogador escolhe até 15 números entre 1 e 80.
+<p>Keno é um jogo comumente encontrado em casinos e é semelhante a um bingo. O jogador escolhe até 15 números entre 1 e 80 e seu ganho é proporcional ao número de acertos.
 
-A casa então sorteia 20 números aleatoriamente e o pagamento é feito de acordo com a quantidade de acertose com a tabela de pagamentos, que é gerada de acordo com o número de apostas.</p>
+A casa sorteia 20 números aleatoriamente e o pagamento é feito de acordo com a tabela de pagamentos, que é gerada a partir do número de apostas. Por exemplo, para 3 números, o pagamento segue a seguinte tabela:</p>
+
+| Acertos     | Fator multiplicador           |
+| :------------- |:-------------|
+| 0      | 0 |
+| 1      | 1   | 
+| 2      | 2   |
+| 3      | 16   |
 
 ## Como executar
 
@@ -12,6 +19,8 @@ A casa então sorteia 20 números aleatoriamente e o pagamento é feito de acord
 | :------------- |:-------------| :-----|
 | 1      | Compilar | ```$ make``` |
 | 2      | Executar   | ```$ ./build/keno_game <arquivo_da_aposta>``` |
+
+Durante o jogo, para passar de uma rodada para outra basta pressionar a tecla ENTER.
 
 ## Possíveis erros
 
@@ -34,7 +43,7 @@ A segunda linha do arquivo, que representa o número de rodadas, deve conter um 
 
 ```O número de números apostados é inválido, por favor, aposte ente 1 - 15 números.``` 
 
-A terceira linha do arquivo deve conter de 1 e 15 números, sendo estes os números que o jogador quer apostar, para ser considerada como uma aposta válida.
+Para ser considerada como uma aposta válida, a terceira linha do arquivo deve conter de 1 a 15 números, sendo estes os números que o jogador quer apostar.
 
 ## Autoria
 
