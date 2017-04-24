@@ -1,0 +1,137 @@
+\hypertarget{classKenoBet}{}\section{Keno\+Bet Class Reference}
+\label{classKenoBet}\index{Keno\+Bet@{Keno\+Bet}}
+
+
+{\ttfamily \#include $<$kenobet.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classKenoBet_a383bdbb38df73584f72670a1cd0f777b}{Keno\+Bet} ()\hypertarget{classKenoBet_a383bdbb38df73584f72670a1cd0f777b}{}\label{classKenoBet_a383bdbb38df73584f72670a1cd0f777b}
+
+\begin{DoxyCompactList}\small\item\em Construtor. \end{DoxyCompactList}\item 
+bool \hyperlink{classKenoBet_a4440293a7c5d12f7aca64cc639928ffe}{add\+\_\+number} (number\+\_\+type value)
+\begin{DoxyCompactList}\small\item\em Adiciona os números válidos à aposta. \end{DoxyCompactList}\item 
+std\+::size\+\_\+t \hyperlink{classKenoBet_a1f634c6e62646072edb7457e865568d7}{size} () const 
+\begin{DoxyCompactList}\small\item\em Recupera a quantidade de números apostados. \end{DoxyCompactList}\item 
+bool \hyperlink{classKenoBet_a1f713deb524c305c65649781d4210fec}{set\+\_\+wage} (cash\+\_\+type value)
+\begin{DoxyCompactList}\small\item\em Configura o valor da aposta. \end{DoxyCompactList}\item 
+cash\+\_\+type \hyperlink{classKenoBet_ac3650e4d42059ae5bf0e4de659648ee5}{get\+\_\+wage} () const 
+\begin{DoxyCompactList}\small\item\em Recupera o valor da aposta. \end{DoxyCompactList}\item 
+set\+\_\+of\+\_\+bets \hyperlink{classKenoBet_ac592f4662e2c26f9c256b43b7ed465b6}{get\+\_\+hits} (const set\+\_\+of\+\_\+bets \&hits\+\_\+) const 
+\begin{DoxyCompactList}\small\item\em Verifica a interseção entre os números sorteados e os da aposta. \end{DoxyCompactList}\item 
+set\+\_\+of\+\_\+bets \hyperlink{classKenoBet_a034adcea5d032a5ced4ae5a5fc85972c}{get\+\_\+spots} () const 
+\begin{DoxyCompactList}\small\item\em Recupera o vetor com os números que o jogador apostou. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Includes 
+
+\subsection{Member Function Documentation}
+\index{Keno\+Bet@{Keno\+Bet}!add\+\_\+number@{add\+\_\+number}}
+\index{add\+\_\+number@{add\+\_\+number}!Keno\+Bet@{Keno\+Bet}}
+\subsubsection[{\texorpdfstring{add\+\_\+number(number\+\_\+type value)}{add_number(number_type value)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Keno\+Bet\+::add\+\_\+number (
+\begin{DoxyParamCaption}
+\item[{number\+\_\+type}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{classKenoBet_a4440293a7c5d12f7aca64cc639928ffe}{}\label{classKenoBet_a4440293a7c5d12f7aca64cc639928ffe}
+
+
+Adiciona os números válidos à aposta. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em value} & Número que se deseja adicionar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Sim, se o número atender os critérios para ser adicionado, não, caso contrário.
+\end{DoxyReturn}
+Includes
+
+Adiciona os números válidos à aposta. \index{Keno\+Bet@{Keno\+Bet}!get\+\_\+hits@{get\+\_\+hits}}
+\index{get\+\_\+hits@{get\+\_\+hits}!Keno\+Bet@{Keno\+Bet}}
+\subsubsection[{\texorpdfstring{get\+\_\+hits(const set\+\_\+of\+\_\+bets \&hits\+\_\+) const }{get_hits(const set_of_bets &hits_) const }}]{\setlength{\rightskip}{0pt plus 5cm}set\+\_\+of\+\_\+bets Keno\+Bet\+::get\+\_\+hits (
+\begin{DoxyParamCaption}
+\item[{const set\+\_\+of\+\_\+bets \&}]{hits\+\_\+}
+\end{DoxyParamCaption}
+) const}\hypertarget{classKenoBet_ac592f4662e2c26f9c256b43b7ed465b6}{}\label{classKenoBet_ac592f4662e2c26f9c256b43b7ed465b6}
+
+
+Verifica a interseção entre os números sorteados e os da aposta. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em hits\+\_\+} & Números sorteados. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vetor com os números acertados.
+\end{DoxyReturn}
+Verifica a interseção entre os números sorteados e os da aposta. \index{Keno\+Bet@{Keno\+Bet}!get\+\_\+spots@{get\+\_\+spots}}
+\index{get\+\_\+spots@{get\+\_\+spots}!Keno\+Bet@{Keno\+Bet}}
+\subsubsection[{\texorpdfstring{get\+\_\+spots() const }{get_spots() const }}]{\setlength{\rightskip}{0pt plus 5cm}set\+\_\+of\+\_\+bets Keno\+Bet\+::get\+\_\+spots (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classKenoBet_a034adcea5d032a5ced4ae5a5fc85972c}{}\label{classKenoBet_a034adcea5d032a5ced4ae5a5fc85972c}
+
+
+Recupera o vetor com os números que o jogador apostou. 
+
+\begin{DoxyReturn}{Returns}
+Vetor com os números apostados pelo jogador.
+\end{DoxyReturn}
+Recupera o vetor com os números que o jogador apostou. \index{Keno\+Bet@{Keno\+Bet}!get\+\_\+wage@{get\+\_\+wage}}
+\index{get\+\_\+wage@{get\+\_\+wage}!Keno\+Bet@{Keno\+Bet}}
+\subsubsection[{\texorpdfstring{get\+\_\+wage() const }{get_wage() const }}]{\setlength{\rightskip}{0pt plus 5cm}cash\+\_\+type Keno\+Bet\+::get\+\_\+wage (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classKenoBet_ac3650e4d42059ae5bf0e4de659648ee5}{}\label{classKenoBet_ac3650e4d42059ae5bf0e4de659648ee5}
+
+
+Recupera o valor da aposta. 
+
+\begin{DoxyReturn}{Returns}
+O valor da aposta.
+\end{DoxyReturn}
+Recupera o valor da aposta. \index{Keno\+Bet@{Keno\+Bet}!set\+\_\+wage@{set\+\_\+wage}}
+\index{set\+\_\+wage@{set\+\_\+wage}!Keno\+Bet@{Keno\+Bet}}
+\subsubsection[{\texorpdfstring{set\+\_\+wage(cash\+\_\+type value)}{set_wage(cash_type value)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Keno\+Bet\+::set\+\_\+wage (
+\begin{DoxyParamCaption}
+\item[{cash\+\_\+type}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{classKenoBet_a1f713deb524c305c65649781d4210fec}{}\label{classKenoBet_a1f713deb524c305c65649781d4210fec}
+
+
+Configura o valor da aposta. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em value} & Valor da aposta informada pelo usuário \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Sim, se a aposta tiver um valor válido e for inserida, não, caso contrário.
+\end{DoxyReturn}
+Configura o valor da aposta. \index{Keno\+Bet@{Keno\+Bet}!size@{size}}
+\index{size@{size}!Keno\+Bet@{Keno\+Bet}}
+\subsubsection[{\texorpdfstring{size() const }{size() const }}]{\setlength{\rightskip}{0pt plus 5cm}std\+::size\+\_\+t Keno\+Bet\+::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classKenoBet_a1f634c6e62646072edb7457e865568d7}{}\label{classKenoBet_a1f634c6e62646072edb7457e865568d7}
+
+
+Recupera a quantidade de números apostados. 
+
+\begin{DoxyReturn}{Returns}
+retorna quantos números válidos foram apostados.
+\end{DoxyReturn}
+Recupera quantidade de números apostados. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/mayra/\+Progs/\+Keno/include/\hyperlink{kenobet_8h}{kenobet.\+h}\item 
+/home/mayra/\+Progs/\+Keno/src/\hyperlink{kenobet_8cpp}{kenobet.\+cpp}\end{DoxyCompactItemize}

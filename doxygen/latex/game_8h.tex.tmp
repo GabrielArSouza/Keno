@@ -1,0 +1,75 @@
+\hypertarget{game_8h}{}\section{/home/mayra/\+Progs/\+Keno/include/game.h File Reference}
+\label{game_8h}\index{/home/mayra/\+Progs/\+Keno/include/game.\+h@{/home/mayra/\+Progs/\+Keno/include/game.\+h}}
+
+
+Arquivo contendo elementos comuns a \hyperlink{classKenoBet}{Keno\+Bet} e Keno\+Game.  
+
+
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$algorithm$>$}\\*
+{\ttfamily \#include $<$iterator$>$}\\*
+{\ttfamily \#include $<$fstream$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$sstream$>$}\\*
+{\ttfamily \#include $<$iomanip$>$}\\*
+{\ttfamily \#include $<$random$>$}\\*
+Include dependency graph for game.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structGame_1_1Result}{Game\+::\+Result}
+\begin{DoxyCompactList}\small\item\em Erro ou Sucesso e armazena mensagem de erro, caso um seja detectado. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using {\bfseries number\+\_\+type} = unsigned short int\hypertarget{game_8h_a1b74f79564dbd5be0e29e97ee8445c7b}{}\label{game_8h_a1b74f79564dbd5be0e29e97ee8445c7b}
+
+\item 
+using {\bfseries cash\+\_\+type} = float\hypertarget{game_8h_ac28b879a6299b00985cb872f5dd9185f}{}\label{game_8h_ac28b879a6299b00985cb872f5dd9185f}
+
+\item 
+using {\bfseries set\+\_\+of\+\_\+bets} = std\+::vector$<$ number\+\_\+type $>$\hypertarget{game_8h_a9dbf2cb4ff79fbf7c6728f59493be69d}{}\label{game_8h_a9dbf2cb4ff79fbf7c6728f59493be69d}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{game_8h_a26419be5e97ff65b51c43e0b88fe38fa}{Game\+::validate} (std\+::string filename)
+\begin{DoxyCompactList}\small\item\em Valida a aposta informada pelo jogador. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Arquivo contendo elementos comuns a \hyperlink{classKenoBet}{Keno\+Bet} e Keno\+Game. 
+
+\begin{DoxyAuthor}{Authors}
+Gabriel Araújo de Souza e Mayra Dantas de Azevedo 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+23 Abr 2017 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\index{game.\+h@{game.\+h}!validate@{validate}}
+\index{validate@{validate}!game.\+h@{game.\+h}}
+\subsubsection[{\texorpdfstring{validate(std\+::string filename)}{validate(std::string filename)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Game\+::validate (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{filename}
+\end{DoxyParamCaption}
+)}\hypertarget{game_8h_file_a26419be5e97ff65b51c43e0b88fe38fa}{}\label{game_8h_file_a26419be5e97ff65b51c43e0b88fe38fa}
+
+
+Valida a aposta informada pelo jogador. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em filename} & Nome do arquivo contendo a aposta \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Sim, caso o arquivo contenha as três informações necessárias, não, caso contrário 
+\end{DoxyReturn}
