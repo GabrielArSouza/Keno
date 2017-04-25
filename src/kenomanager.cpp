@@ -2,7 +2,7 @@
  * @file kenomanager.cpp
  * @authors Gabriel Araújo de Souza e Mayra Dantas de Azevedo
  * @date 23 Abr 2017
- * @brief Arquivo com as impletações dos métodos da classe KenoManager.
+ * @brief Arquivo com as implentações dos métodos da classe KenoManager.
  */
 
 /*!Includes*/
@@ -265,7 +265,7 @@ void Keno::KenoManager::render(){
 	std::cout << std::setw(50) << std::setfill( '-' ) << "" << std::endl;
     std::cout << " Esta é a rodada #" << m_current_round 
     		  << " de " << m_rounds << ", e sua aposta é de " 
-    		  << "R$" <<  m_wage << ". Boa Sorte!\n";
+    		  << "R$" <<  m_wage << ". Boa sorte!\n";
 
     std::cout << " Os números sorteados são: [ ";
     for ( auto i(0); i < 20; i++)
@@ -306,11 +306,12 @@ void Keno::KenoManager::end_game(){
 
 	auto gain = this->get_won() - bet.get_wage();
 
-	std::cout << "===== SUMÁRIO =====\n\n";
+	std::cout << "=" << std::setw(25) << std::setfill('=')<<" SUMÁRIO " << std::setw(25) <<"\n\n";
 	std::cout << ">>> Você entrou no jogo com um total de R$" << bet.get_wage() << " reais\n";
-	if ( gain > 0 ) 
-		std::cout << ">>> Você ganhou R$" << gain << " reais. Até a próxima! ;-)\n";
+	if ( gain >= 0 ) 
+		std::cout << ">>> Você ganhou R$" << gain;
 	else 
-		std::cout << ">>> Você perdeu R$" << gain * -1 << " reais. Até a próxima! ;-)\n";
+		std::cout << ">>> Você perdeu R$" << gain * -1;
+	std::cout << " reais. Até a próxima! ;-)\n";
 	std::cout << ">>> Você está saindo do Keno com R$" << this->get_won() << " reais.\n\n";
 }
