@@ -136,7 +136,7 @@ cash_type Keno::KenoManager::get_payout () const {
 /*! Configura o pagamento da rodada */
 void Keno::KenoManager::set_payout ( int value ){
 
-	auto pg = Game::payouts[bet.size()][value];
+	auto pg = Game::payouts[bet.size()-1][value];
 	m_payout = pg;
 }
 
@@ -251,10 +251,10 @@ void Keno::KenoManager::update(){
 	auto hits = bet.get_hits(m_numbers);
 	auto n_hits = hits.size();
 	
-	this->set_payout(n_hits);	
+	/*error achado*/
+	this->set_payout(n_hits);
 	this->set_pmoney();
     this->set_won(get_pmoney());
-
 }
 
 /**
