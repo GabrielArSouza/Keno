@@ -44,7 +44,6 @@ namespace Keno{
              */
             Game::Result initialize (std::string filename);
 
-            /*! Recupera o valor de cada aposta.*/
             /**
              * @brief      Recupera o valor de cada aposta.
              * @return     Valor da aposta.
