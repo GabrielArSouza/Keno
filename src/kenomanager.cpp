@@ -308,6 +308,9 @@ void Keno::KenoManager::end_game(){
 
 	std::cout << "=" << std::setw(25) << std::setfill('=')<<" SUMÁRIO " << std::setw(25) <<"\n\n";
 	std::cout << ">>> Você entrou no jogo com um total de R$" << bet.get_wage() << " reais\n";
+
+	std::cout << std::setprecision(2);
+
 	if ( gain >= 0 ) 
 		std::cout << ">>> Você ganhou R$" << gain;
 	else 
