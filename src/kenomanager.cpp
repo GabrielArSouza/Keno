@@ -177,6 +177,8 @@ set_of_bets Keno::KenoManager::draw_number () {
  void Keno::KenoManager::welcome() const{
     int turns = bet.size();
 
+    std::cout << std::fixed << std::setprecision(2);
+
     auto table_len(23);
     int double_table_len = table_len/2;
 
@@ -262,6 +264,7 @@ void Keno::KenoManager::update(){
  */
 void Keno::KenoManager::render(){
 
+	std::cout << std::fixed << std::setprecision(2);
 	std::cout << std::setw(50) << std::setfill( '-' ) << "" << std::endl;
     std::cout << " Esta é a rodada #" << m_current_round 
     		  << " de " << m_rounds << ", e sua aposta é de " 
@@ -300,6 +303,7 @@ void Keno::KenoManager::render(){
  */
 void Keno::KenoManager::end_game(){
 
+	std::cout << std::fixed << std::setprecision(2);
 	std::cout << ">>> FIM DE JOGO \n";
 	std::cout << std::setfill('-') << std::setw(50);
 	std::cout << "\n\n";
@@ -308,8 +312,6 @@ void Keno::KenoManager::end_game(){
 
 	std::cout << "=" << std::setw(25) << std::setfill('=')<<" SUMÁRIO " << std::setw(25) <<"\n\n";
 	std::cout << ">>> Você entrou no jogo com um total de R$" << bet.get_wage() << " reais\n";
-
-	std::cout << std::fixed << std::setprecision(2);
 
 	if ( gain >= 0 ) 
 		std::cout << ">>> Você ganhou R$" << gain;

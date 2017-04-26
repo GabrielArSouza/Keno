@@ -22,7 +22,6 @@ using number_type = unsigned short int ;         // <! Tipo de dados para os nú
 using cash_type = float ;                        // <! Define o tipo do dinheiro no Keno.
 using set_of_bets = std::vector < number_type >; // <! Define o tipo do vetor com números do Keno.
 
-
 namespace Game{
 
      static const int MIN_NUMBER_SPOTS = 1;      //<! Menor número de apostas
