@@ -22,6 +22,26 @@ A casa sorteia 20 números aleatoriamente e o pagamento é feito de acordo com a
 
 Durante o jogo, para passar de uma rodada para outra basta pressionar a tecla ENTER.
 
+## Como fazer uma aposta
+
+1º Crie um arquivo .txt (ou edite os criados na pasta data);<br/>
+2º Edite o arquivo com os dados da sua posta;<br/>
+
+Uma arquivo com aposta válida deve ser escrito da forma:<br/>
+<Valor_da_aposta> ( Número real entre 1 - 10.000 )<br/>
+<Quantidade_de_rodadas> ( Número natural entre 1 - 10 )<br/>
+<Números_que_se_deseja_apostar> ( No máximo 15 números naturais, separados por espaço entre 1 - 80 )<br/>
+
+### Exemplo de aposta
+
+5000 <br/>
+5<br/>
+1 5 9 20 12 45 77 22 54<br/>
+
+<p>Nessa aposta, o jogador ta entrando com R$5000.00, distribuindo essa valor em 5 rodadas e apostando os números da última linha.
+Se o arquivo conter números fora do intervalo 1 - 80, eles serão desconsiderados, caso algum campo não contenha valores aceitados pelo
+jogo, alguns erros podem ser exibidos, estes podem ser conferidos na sessão abaixo. </p> 
+
 ## Possíveis erros
 
 ```Arquivo inválido! Por favor, tente novamente.```
