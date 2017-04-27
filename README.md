@@ -25,14 +25,15 @@ Durante o jogo, para passar de uma rodada para outra basta pressionar a tecla EN
 ## Como fazer uma aposta
 
 1º Crie um arquivo .txt (ou edite os criados na pasta data);<br/>
-2º Edite o arquivo com os dados da sua posta;<br/>
+2º Edite o arquivo com os dados da sua posta;<br/><br/>
 
-Uma arquivo com aposta válida deve ser escrito da forma:<br/>
-<Valor_da_aposta> ( Número real entre 1 - 10.000 )<br/>
-<Quantidade_de_rodadas> ( Número natural entre 1 - 10 )<br/>
-<Números_que_se_deseja_apostar> ( No máximo 15 números naturais, separados por espaço entre 1 - 80 )<br/>
+Uma arquivo com aposta válida deve ser escrito da forma:<br/><br/>
 
-### Exemplo de aposta
+**<Valor_da_aposta>** ( Número real entre 1 - 10.000 )<br/>
+**<Quantidade_de_rodadas>** ( Número natural entre 1 - 10 )<br/>
+**<Números_que_se_deseja_apostar>** ( No máximo 15 números naturais, separados por espaço entre 1 - 80 )<br/>
+
+#### Exemplo de aposta
 
 5000 <br/>
 5<br/>
