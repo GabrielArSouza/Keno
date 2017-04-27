@@ -24,8 +24,8 @@ Durante o jogo, para passar de uma rodada para outra basta pressionar a tecla EN
 
 ## Como fazer uma aposta
 
-1º Crie um arquivo .txt (ou edite os criados na pasta data);<br/>
-2º Edite o arquivo com os dados da sua posta;<br/>
+1º Crie um arquivo de texto(.txt, .dat, etc), ou edite os criados na pasta data.<br/>
+2º Edite o arquivo com os dados da sua aposta.<br/>
 
 Uma arquivo com aposta válida deve ser escrito da forma:
 
@@ -40,8 +40,8 @@ Uma arquivo com aposta válida deve ser escrito da forma:
 1 5 9 20 12 45 77 22 54
 ```
 
-<p>Nessa aposta, o jogador ta entrando com R$5000.00, distribuindo essa valor em 5 rodadas e apostando os números da última linha.
-Se o arquivo conter números fora do intervalo 1 - 80, eles serão desconsiderados, caso algum campo não contenha valores aceitados pelo
+<p>Nessa aposta, o jogador ta entrando com R$5000.00, distribuindo esse valor em 5 rodadas e apostando os números da última linha.
+Se o arquivo conter números fora do intervalo [1, 80], eles serão desconsiderados caso algum campo não contenha valores aceitados pelo
 jogo, alguns erros podem ser exibidos, estes podem ser conferidos na sessão abaixo. </p> 
 
 ## Possíveis erros
