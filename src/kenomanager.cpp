@@ -191,6 +191,7 @@ set_of_bets Keno::KenoManager::draw_number () {
     for( auto i(0); i < turns; ++i)
         std::cout << bet.get_spots()[i] << " ";
     std::cout << "].\n";
+    std::cout << std::setprecision(1);
 
     std::cout << ""  << std::setw(4) << "" << "Aqui está a tabela com os valores dos acertos :\n";
  
