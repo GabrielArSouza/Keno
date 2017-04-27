@@ -34,10 +34,11 @@ Uma arquivo com aposta válida deve ser escrito da forma:
 **<Números_que_se_deseja_apostar>** ( No máximo 15 números naturais, separados por um espaço e entre 1 - 80 )<br/>
 
 #### Exemplo de aposta
-
-5000 <br/>
-5<br/>
-1 5 9 20 12 45 77 22 54<br/>
+```
+5000 
+5
+1 5 9 20 12 45 77 22 54
+```
 
 <p>Nessa aposta, o jogador ta entrando com R$5000.00, distribuindo essa valor em 5 rodadas e apostando os números da última linha.
 Se o arquivo conter números fora do intervalo 1 - 80, eles serão desconsiderados, caso algum campo não contenha valores aceitados pelo
