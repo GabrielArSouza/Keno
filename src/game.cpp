@@ -7,6 +7,7 @@
 
  #include "game.h"
  
+ //<! Valida arquivo
  bool Game::validate ( std::string filename){
     std::string line = " ";
     std::ifstream file (filename);
@@ -26,6 +27,7 @@
         
 }
 
+//<! Função usada pela biblioteca graal 
 bool compare(const void * a, const void * b){
     int * x = (int *) a;
     int * y = (int *) b;
