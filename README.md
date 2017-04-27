@@ -68,7 +68,7 @@ Para ser considerada como uma aposta válida, a terceira linha do arquivo deve c
 
 ## Autoria
 
-Desenvolvido por Gabriel Araújo de Souze (<gabriel_feg@hotmail.com >) e Mayra Dantas de Azevedo (<mayradazevedo@gmail.com >)
+Desenvolvido por Gabriel Araújo de Souza (<gabriel_feg@hotmail.com >) e Mayra Dantas de Azevedo (<mayradazevedo@gmail.com >)
 
 2017.1
 
