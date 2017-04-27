@@ -170,8 +170,6 @@ set_of_bets Keno::KenoManager::draw_number () {
     //<! Ordena o vetor 
     graal::selection_sort( &m_numbers[0], &m_numbers.back()+1, compare , sizeof(number_type));
     
-    //std::sort(m_numbers.begin(), m_numbers.end());
-    
     //<! Desaloca vetor temporário
     delete [] temp; 
 
