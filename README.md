@@ -31,7 +31,7 @@ Uma arquivo com aposta válida deve ser escrito da forma:
 
 **<Valor_da_aposta>** ( Número real entre 1 - 10.000 )<br/>
 **<Quantidade_de_rodadas>** ( Número natural entre 1 - 10 )<br/>
-**<Números_que_se_deseja_apostar>** ( No máximo 15 números naturais, separados por espaço entre 1 - 80 )<br/>
+**<Números_que_se_deseja_apostar>** ( No máximo 15 números naturais, separados por um espaço e entre 1 - 80 )<br/>
 
 #### Exemplo de aposta
 
