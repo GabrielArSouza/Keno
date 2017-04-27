@@ -18,9 +18,19 @@
 #include <iomanip>    //<! std::setw, std::setfill
 #include <random>     //<! std::random_device, std::mt19937
 
+#include "graal.h"
+
 using number_type = unsigned short int ;         // <! Tipo de dados para os números do Keno.
 using cash_type = float ;                        // <! Define o tipo do dinheiro no Keno.
 using set_of_bets = std::vector < number_type >; // <! Define o tipo do vetor com números do Keno.
+
+/**
+ * @brief      Função para comparar dois números, ela é usada nos algoritmos de ordenação
+ * @param[in]  a     1º número a se comparar
+ * @param[in]  b     2º número a se comparar
+ * @return     se a é menor ou igual a b
+ */
+bool compare(const void * a, const void * b);
 
 namespace Game{
 

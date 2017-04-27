@@ -9,15 +9,6 @@
 /*! Includes */
 #include "kenobet.h"
 #include "game.h"
-#include "graal.h"
-
-bool compare(const void * a, const void * b){
-	int * x = (int *) a;
-	int * y = (int *) b;
-
-	return (*x <= *y);
-}
-
 
 /*! Adiciona os números válidos à aposta.*/
 bool KenoBet::add_number (number_type value){
@@ -25,7 +16,7 @@ bool KenoBet::add_number (number_type value){
 	if ( value >= Game::MIN_SPOT && value <= Game::MAX_SPOT )
 	{
 		m_spots.push_back(value);
-        graal::insertion_sort( &m_spots[0], &m_spots.back(), compare , sizeof(value));
+        graal::insertion_sort( &m_spots[0], &m_spots.back()+1, compare , sizeof(value));
         auto end = std::unique(m_spots.begin(), m_spots.end());
         int sz = std::distance ( m_spots.begin(), end);
         m_spots.resize(sz);

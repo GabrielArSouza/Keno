@@ -166,10 +166,13 @@ set_of_bets Keno::KenoManager::draw_number () {
 
     // <! Copia os vinte primeiros elementos do vetor temporário
     std::copy(temp, temp+20, m_numbers.begin());
-    delete [] temp; //<! Desaloca vetor temporário
+    //<! Desaloca vetor temporário
+    delete [] temp; 
 
     //<! Ordena o vetor 
-    std::sort(m_numbers.begin(), m_numbers.end());
+    graal::selection_sort( &m_numbers[0], &m_numbers.back()+1, compare , sizeof(number_type));
+    
+    //std::sort(m_numbers.begin(), m_numbers.end());
     return m_numbers;
 }
 
