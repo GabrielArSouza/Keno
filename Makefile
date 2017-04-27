@@ -8,6 +8,7 @@
 INCDIR = include
 SRCDIR = src
 OBJDIR = build
+LIBDIR = lib/
 
 # TARGET
 TARGET = $(OBJDIR)/keno_game
@@ -27,7 +28,8 @@ CC = g++
 ## FLAGS
 WARN = -Wall
 INCFLAG = -I $(INCDIR)
-CFLAGS = $(WARN) -std=c++11 $(INCFLAG) -c
+LIBFLAG = -L $(LIBDIR) -l graal
+CFLAGS = $(WARN) -std=c++11 $(INCFLAG) $(LIBFLAG) -c
 
 all: $(TARGET) clean	
 	
@@ -38,7 +40,7 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.$(SRCEXT)
 
 $(TARGET): $(OBJS)
 	@echo "Compilando..."
-	$(CC) $^ $(INLFLAG) -o $@  
+	$(CC) $^ $(INLFLAG) $(LIBFLAG) -o $@  
 
 .PHONY: clean
 clean:
